@@ -1,0 +1,13 @@
+form{
+    border: 2px black dashed;
+    font-weight: bolder;
+    text-align: center;
+    
+}
+button{
+    margin: 10px;
+}
+
+h2{
+    background-color: yellow;
+}
