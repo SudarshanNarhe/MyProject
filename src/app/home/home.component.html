@@ -1,6 +1,52 @@
-<p>home works!</p>
+<h1> In home </h1>
+
+<!-- <p>home works!</p>
+
 <div>
     <button onclick="alert('submit Successfully')">Click me</button>
 
-</div>
-<app-about-us></app-about-us> 
+</div> -->
+<!-- <app-about-us></app-about-us>  -->
+
+<!-- Data Binding -->
+<h1>Data Binding</h1>
+<h1>This is One way Data Binding</h1>
+<!-- 1.Interpolation {{}} it will pass data from ts to html i.e. from module to view but not work with boolean value-->
+<h1>1.Interpolation Demo </h1>
+<h2>{{cityname}}</h2>
+
+<h2>{{num}}</h2>
+
+<h2>{{7*3+2-1}}</h2>
+
+<h2>Calling method : </h2>
+<h3>{{getData()}}</h3>
+
+<h2>Image Demo : </h2>
+
+<img src="{{path}}" alt="treeImage">
+
+<h2>Ternary Operator :</h2>
+<h2>{{name ? 'Some data present': 'No data present'}}</h2>
+
+<!-- 2.Property Binding [] it also pass the data from module to view i.e. ts to html-->
+<h1>2.Property Binding Demo</h1>
+<h2>Image Demo : </h2>
+<img [src]="path" alt="tree_image"><br><br>
+
+<!-- <input type="text" disabled="{{isdisable}}" value="Welcome"> --> 
+<!-- it will not work with interpolation so we have to only apply property binding here -->
+
+<input type="text" [disabled]="isdisable" value="Welcome"><br><br><br>
+<!-- now it will work when change the boolean value of isdisable -->
+
+<!-- 3.Event Binding() it will pass the data from html to ts i.e. view to module -->
+<h1>3.Event Binding Demo : </h1>
+
+<h2>{{msg}}</h2>
+
+<button (click)="onMyClick()">Click Me</button><br><br>
+
+<!-- <button>{{buttonReturn()}}</button> -->
+
+
