@@ -1,11 +1,10 @@
 <h1> In home </h1>
 
-<!-- <p>home works!</p>
+ <p>home works!</p>
 
 <div>
     <button onclick="alert('submit Successfully')">Click me</button>
-
-</div> -->
+</div>
 <!-- <app-about-us></app-about-us>  -->
 
 <!-- Data Binding -->
@@ -45,8 +44,18 @@
 
 <h2>{{msg}}</h2>
 
-<button (click)="onMyClick()">Click Me</button><br><br>
+<button (click)="onMyClick()">Click Me</button><br><br><br>
 
 <!-- <button>{{buttonReturn()}}</button> -->
 
+<h3>Checking BootStrap</h3>
 
+<button class="btn btn-warning">ClickMe</button><br><br>
+
+<h1>This is Two Way Data Binding (ngModel)</h1><br>
+
+<!-- in the ngModel we use banana in box [()] it is combination of event() and property [] binding -->
+
+<input type="text" [(ngModel)]="data">  <br><br>
+<!-- to use the ngModel we have to add formsModule in import section of corresponding ts file -->
+<h2>Data : {{data}}</h2>

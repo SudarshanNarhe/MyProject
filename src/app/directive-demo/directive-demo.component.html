@@ -1,0 +1,113 @@
+<br><br><h1>Directives Demo</h1><br><br>
+
+<!-- Three Categories
+        a.structural
+        b.component
+        c.Attribute -->
+
+<h3>If Demo</h3><br>
+
+<button (click)="show=!show" class="btn btn-primary">Click Me</button><br>
+    {{'show='+show}}
+<div *ngIf="show">Text To show</div><br>
+
+<h3>If Else Demo</h3>
+
+<!-- <button class="btn btn-warning" (click)="show=!show">Click Me</button> -->
+{{'show='+show}}
+<div *ngIf="show  else elseBlock">Text To Show</div>
+<ng-template #elseBlock>
+    <div>Text to hide</div>
+</ng-template>
+<br><br>
+<h3>Taking value from user</h3><br>
+<b>Enter Age :</b><input type="text" [(ngModel)]="age">
+<div *ngIf="age>18 else CheckAge"><b>You Are Eligible for Voting</b></div>
+<ng-template #CheckAge>
+    <div><b>You Are NOT Eligible for Voting</b></div>
+</ng-template>
+<br><br>
+
+<h3>Switch Demo</h3>
+<input type="text" [(ngModel)]="color">
+<div [ngSwitch]="color.toLowerCase()">
+    <div *ngSwitchCase="'red'">This is Red</div>
+    <div *ngSwitchCase="'blue'">This is Blue</div>
+    <div *ngSwitchCase="'yellow'">This is Yellow</div>
+    <div *ngSwitchCase="'green'">This is Green</div>
+    <div *ngSwitchDefault>Please Pick One color</div>
+</div>
+<br><br>
+
+<h3>******Assingments******</h3>
+
+<p><b>A.Check The Greatest Number between Two Number</b></p>
+<b>Enter First Number : </b> <input type="text" [(ngModel)]="num1">
+<b>Enter Second Number : </b> <input type="text" [(ngModel)]="num2">
+
+<div *ngIf="+num1 > +num2 else elseBox">{{num1}} <b>is Greatest</b></div>
+<!-- = sign is used to concat otherwise it will only run till the 99 -->
+<ng-template #elseBox>
+    <div>{{num2}} <b>is Greatest</b></div>
+</ng-template>
+<br><br>
+
+<p><b>B.Check Odd Even</b></p>
+<b>Enter Any Number : </b> <input type="text" [(ngModel)]="num3">
+<div *ngIf="+num3%2==0 else  Odd"><b>{{num3}} is Even Number</b></div>
+<ng-template #Odd>
+    <div><b>{{num3}} is Odd Number</b></div>
+</ng-template>
+<br><br>
+
+<p><b>C.Check Number is Divisible By 5 or Not</b></p>
+<b>Enter Any Number : </b> <input type="text" [(ngModel)]="num5">
+<div *ngIf="+num5%5==0 else condition"><b>{{num5}} is divisible by 5</b></div>
+<ng-template #condition>
+    <div><b>{{num5}} is NOT Divisible by 5</b></div>
+</ng-template>
+<br><br>
+
+<p><b>D.Take Number And Display in Words.</b></p>
+<b>Enter Any Number : </b> <input type="number" [(ngModel)]="num6">
+<div [ngSwitch]="num6">
+    <div *ngSwitchCase="0"><b>Zero</b></div>
+    <div *ngSwitchCase="1"><b>One</b></div>
+    <div *ngSwitchCase="2"><b>Two</b></div>
+    <div *ngSwitchCase="3"><b>Three</b></div>
+    <div *ngSwitchCase="4"><b>Four</b></div>
+    <div *ngSwitchCase="5"><b>Five</b></div>
+    <div *ngSwitchCase="6"><b>Six</b></div>
+    <div *ngSwitchCase="7"><b>Seven</b></div>
+    <div *ngSwitchCase="8"><b>Eight</b></div>
+    <div *ngSwitchCase="9"><b>Nine</b></div>
+    <div *ngSwitchCase="10"><b>Ten</b></div>
+    <div *ngSwitchDefault>Enter between 0 to 10 </div>
+</div>
+<br><br>
+
+<p><b>E.WeekDay</b></p>
+<b>Enter Day Number : </b> <input type="number" [(ngModel)]="day">
+<div [ngSwitch]="day">
+    <div *ngSwitchCase="1"><b>Today is Monday</b></div>
+    <div *ngSwitchCase="2"><b>Today is Tuesday</b></div>
+    <div *ngSwitchCase="3"><b>Today is Wednesday</b></div>
+    <div *ngSwitchCase="4"><b>Today is Thursday</b></div>
+    <div *ngSwitchCase="5"><b>Today is Friday</b></div>
+    <div *ngSwitchCase="6"><b>Today is Saturday</b></div>
+    <div *ngSwitchCase="7"><b>Today is Sunday</b></div>
+    <div *ngSwitchDefault>Please Enter Week Day Number</div>
+</div>
+<br><br>
+
+<h3>For Loop</h3>
+<p><b>Array</b></p>
+
+<ul>
+    <li *ngFor="let i of num7">{{i}}</li>
+</ul>
+
+<p><b>Fruit Items</b></p>
+<ul>
+    <li *ngFor="let item of items">{{item}}</li>
+</ul>
