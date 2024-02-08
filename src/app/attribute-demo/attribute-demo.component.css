@@ -1,0 +1,15 @@
+*{
+    margin-left: 20px;
+    margin-top: 10px;
+}
+.boldclass{
+    font-weight: bold;
+}
+
+.italicclass{
+    font-style: italic;
+}
+
+.colorclass{
+    color: blue;
+}

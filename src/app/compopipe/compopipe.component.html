@@ -1,0 +1,98 @@
+
+<h2>In Build Pipe Demo</h2>
+<br>
+<h4>{{msg}}</h4>
+<br>
+<h4>{{msg | uppercase}}</h4>
+<br>
+<h4>{{msg | lowercase}}</h4>
+<br>
+<h4>{{msg | titlecase}}</h4>
+<br>
+<h4>{{amount}}</h4>
+<br>
+<h4>{{amount | currency:'USD'}}</h4>
+<br>
+<h4>{{amount | currency : 'INR'}}</h4>
+<br>
+<h4>{{amount | currency : 'INR':false}}</h4>
+<br>
+<h4>{{amount | percent:'.2'}}</h4>
+<br>
+<h4>{{today}}</h4>
+<br>
+<h4>{{today | date}}</h4>
+<br>
+<h4>{{today | date:'fullDate'}}</h4>
+<br>
+<h4>{{today | date:'shortDate'}}</h4>
+<br>
+<h4>{{today | date:'mediumDate'}}</h4>
+<br>
+<h4>{{today | date:'HH:MM'}}</h4>
+<br>
+<h4>{{today | date:'HH:MM:SS a'}}</h4>
+<br>
+<h2>Custom Pipe</h2>
+<br>
+<h4>{{msg}}</h4>
+<h4>{{msg | pipeDemo }}</h4>
+
+<button (click)="show(10,20,30)">ClickME</button>
+<br>
+<br>
+<p><b>Calculate the power of Number</b></p>
+
+<!-- Enter a Base <input [(type)]="number">
+Enter a Expo <input type="nuumber"> -->
+
+<h5>{{base | cube:expo}}</h5>
+
+<!-- Table Creation -->
+<p><b>Using Pipes in table</b></p>
+
+<table>
+    <tr>
+        <th>DOB</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>AnualSalary</th>
+        <th>Date Of Birth</th>
+    </tr>
+
+    <tr *ngFor="let emp of employee">
+        <td>{{emp.code}}</td>
+        <td>{{emp.name}}</td>
+        <td>{{emp.gender}}</td>
+        <td>{{emp.anualSalary}}</td>
+        <td>{{emp.DOB}}</td>
+    </tr>
+
+
+</table>
+
+<br><br>
+
+<table>
+    <tr>
+        <th>DOB</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>AnualSalary</th>
+        <th>Date Of Birth</th>
+    </tr>
+
+    <tr *ngFor="let emp of employee">
+        <td>{{emp.code | uppercase}}</td>
+        <ng-container *ngIf="emp.gender === 'Male'; else femaleTitle">
+            <td>MR.{{emp.name | uppercase}}</td>
+        </ng-container>
+        <ng-template #femaleTitle>
+            <td>MISS.{{emp.name | uppercase}}</td>
+        </ng-template>
+        <td>{{emp.gender}}</td>
+        <td>{{emp.anualSalary | currency : 'USD'}}</td>
+        <td>{{emp.DOB | convertStringToDate | date:'fullDate'}}</td>
+    </tr>
+    
+</table>

@@ -1,0 +1,51 @@
+
+<h3>Employee Form</h3>
+<br>
+
+<form (ngSubmit)="onAddEmployee()">
+    <div class="mb-3">
+        <label for="empid" class="form-label">Employee Id</label>
+        <input
+          [(ngModel)]="eid"
+          name="eid"
+          type="text"
+          class="form-control"
+          id="empid"
+          placeholder="Employee Id"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="empName" class="form-label">Employee Name</label>
+        <input
+        [(ngModel)]="ename"
+        name="ename"
+          type="text"
+          class="form-control"
+          id="empName"
+          placeholder="Employee Name"
+        />
+      </div>
+      <div class="mb-3">
+          <label for="city" class="form-label">City</label>
+          <input
+          [(ngModel)]="city"
+          name="city"
+            type="text"
+            class="form-control"
+            id="city"
+            placeholder="City"
+          />
+        </div><br>
+      <div class="col-12">
+        <button type="submit" class="btn btn-success">Add Employee</button>
+      </div>
+</form>
+
+<p *ngIf="employees.length > 0">Added Employees:</p>
+<ul>
+  <li *ngFor="let employee of employees">
+    <p>Your Employee id: {{ employee.eid }}</p>
+    <p>Hello, {{ employee.ename }}</p>
+    <p>Location: {{ employee.city }}</p>
+  </li>
+</ul>

@@ -1,1 +1,10 @@
+*{
+    margin-bottom: 30px;
+    margin-left: 10px;
+}
 
+table, tr, th,td{
+    border: 2px solid;
+    border-collapse: collapse;
+    margin-left: 20px;
+}

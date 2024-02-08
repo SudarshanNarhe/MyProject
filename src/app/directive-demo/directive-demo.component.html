@@ -5,6 +5,7 @@
         b.component
         c.Attribute -->
 
+        <h1>This is Structural Demo</h1>
 <h3>If Demo</h3><br>
 
 <button (click)="show=!show" class="btn btn-primary">Click Me</button><br>
@@ -111,3 +112,115 @@
 <ul>
     <li *ngFor="let item of items">{{item}}</li>
 </ul>
+
+
+<!-- showing employee data in table form -->
+<h2>Showing Employee Data </h2>
+
+<table>
+    <tr>
+        <th>Sr.no</th>
+        <th>Employee ID</th>
+        <th>Employee Name</th>
+        <th>Salary</th>
+    </tr>
+    <tr *ngFor="let emp of employee let i=index ">
+        <td>{{i+1}}</td>
+        <td>{{emp.eid}}</td>
+        <td>{{emp.ename}}</td>
+        <td>{{emp.salary}}</td>
+    </tr>
+    <tr *ngIf="employee.length==0">
+        <td colspan="5">No Data Present...</td>
+    </tr>
+</table>
+
+
+<p><b>Que. Create a Movie array having title, director, ticket cost, release date 
+     a.display all the movies in tabular form 
+     b. display at odd position
+     c. if empty show display error message </b></p>
+
+<h2>Showing Movie Data</h2>
+
+<table>
+    <tr>
+        <th>Sr.no</th>
+        <th>Movie Title</th>
+        <th>Director</th>
+        <th>Ticket Price</th>
+        <th>Release Date</th>
+    </tr>
+    <tr *ngFor="let m of movie let i=index">
+        <td>{{i+1}}</td>
+        <td>{{m.title}}</td>
+        <td>{{m.dir}}</td>
+        <td>{{m.price}}</td>
+        <td>{{m.releaseDate}}</td>
+    </tr>
+    <tr *ngIf="movie.length==0">
+        <td colspan="5">No Data Present...</td>
+    </tr>
+</table>
+
+<h5>Showing movies who is on the odd position</h5>
+<table>
+    <tr>
+        <th>Sr.no</th>
+        <th>Movie Title</th>
+        <th>Director</th>
+        <th>Ticket Price</th>
+        <th>Release Date</th>
+        <th>Index</th>
+    </tr>
+    <tr *ngFor="let m of movie let i=index">
+        <ng-container *ngIf="i%2==0">
+        <td>{{i+1}}</td>
+        <td>{{m.title}}</td>
+        <td>{{m.dir}}</td>
+        <td>{{m.price}}</td>
+        <td>{{m.releaseDate}}</td>
+        <td>{{i}}</td>
+    </ng-container>
+    </tr>
+</table>
+
+<p><b>Que. Create a student array which contain id,name,and marks
+    a.display all students in tabular form
+    b.display one those studnet whose marks is more than 60</b> </p>
+
+    <h5>Showing All Student Data</h5>
+
+    <table>
+        <tr>
+            <th>Sr.No</th>
+            <th>Roll No</th>
+            <th>Student Name</th>
+            <th>Marks</th>
+        </tr>
+        <tr *ngFor="let std of student let i=index">
+            <td>{{i+1}}</td>
+            <td>{{std.sid}}</td>
+            <td>{{std.sname}}</td>
+            <td>{{std.marks}}</td>
+        </tr>
+    </table>
+
+    <p><b>Showing students who having more than 60 marks</b></p>
+
+    <table>
+        <tr>
+            <th>Sr.No</th>
+            <th>Roll No</th>
+            <th>Student Name</th>
+            <th>Marks</th>
+        </tr>
+        <tr *ngFor="let std of student let i=index">
+            <ng-container *ngIf="std.marks>60">
+            <td>{{i+1}}</td>
+            <td>{{std.sid}}</td>
+            <td>{{std.sname}}</td>
+            <td>{{std.marks}}</td>
+        </ng-container>
+        </tr>
+    </table>
