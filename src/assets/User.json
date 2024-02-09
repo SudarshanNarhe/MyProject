@@ -1,0 +1,14 @@
+
+
+{
+    "data":[
+        {"id":1, "name":"Sudarshan","Salary":89000},
+        {"id":2, "name":"Suraj","Salary":90000},
+        {"id":3, "name":"Yogesh","Salary":50000},
+        {"id":4, "name":"Aadarsh","Salary":80000},
+        {"id":5, "name":"Pritam","Salary":35000},
+        {"id":6, "name":"Abhi","Salary":20000},
+        {"id":7, "name":"Pranay","Salary":60000},
+        {"id":8, "name":"Shubham","Salary":45000}
+    ]
+}

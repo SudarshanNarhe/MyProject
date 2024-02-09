@@ -1,0 +1,20 @@
+<h4>Hello Sudarshan, I am myHttpUse Component</h4>
+
+<br><br>
+
+<table>
+    <tbody>
+        <tr>
+            <th>Employee ID</th>
+            <th>Employee Name</th>
+            <th>Salary</th>
+        </tr>
+        @for(emp of user;track emp){
+        <tr>
+            <td>{{emp.id}}</td>
+            <td>{{emp.name}}</td>
+            <td>{{emp.Salary}}</td>
+        </tr>
+    }
+    </tbody>
+</table>

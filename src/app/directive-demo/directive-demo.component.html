@@ -118,6 +118,7 @@
 <h2>Showing Employee Data </h2>
 
 <table>
+    <tbody>
     <tr>
         <th>Sr.no</th>
         <th>Employee ID</th>
@@ -133,6 +134,7 @@
     <tr *ngIf="employee.length==0">
         <td colspan="5">No Data Present...</td>
     </tr>
+</tbody>
 </table>
 
 
@@ -144,6 +146,7 @@
 <h2>Showing Movie Data</h2>
 
 <table>
+    <tbody>
     <tr>
         <th>Sr.no</th>
         <th>Movie Title</th>
@@ -161,10 +164,12 @@
     <tr *ngIf="movie.length==0">
         <td colspan="5">No Data Present...</td>
     </tr>
+</tbody>
 </table>
 
 <h5>Showing movies who is on the odd position</h5>
 <table>
+    <tbody>
     <tr>
         <th>Sr.no</th>
         <th>Movie Title</th>
@@ -183,6 +188,7 @@
         <td>{{i}}</td>
     </ng-container>
     </tr>
+</tbody>
 </table>
 
 <p><b>Que. Create a student array which contain id,name,and marks
@@ -192,6 +198,7 @@
     <h5>Showing All Student Data</h5>
 
     <table>
+        <tbody>
         <tr>
             <th>Sr.No</th>
             <th>Roll No</th>
@@ -204,11 +211,13 @@
             <td>{{std.sname}}</td>
             <td>{{std.marks}}</td>
         </tr>
+    </tbody>
     </table>
 
     <p><b>Showing students who having more than 60 marks</b></p>
 
     <table>
+        <tbody>
         <tr>
             <th>Sr.No</th>
             <th>Roll No</th>
@@ -223,4 +232,134 @@
             <td>{{std.marks}}</td>
         </ng-container>
         </tr>
+    </tbody>
     </table>
+<br>
+
+<h2>*******Demo For Structural Directives in angular 17 *******</h2>
+
+<h4>if else demo</h4>
+
+<b>Enter Your age</b> <input type="text" [(ngModel)]="num11">
+<br>
+    @if(num11>18){
+        <b>Person is Eligible for Voting</b>
+    }
+    @else{
+        <b>Person is NOT Eligible for Voting</b>
+    }
+<br><br>
+
+<b>Enter First Number : </b><input type="text" [(ngModel)]="num12">
+<br>
+@if(num12>0){
+    <b>{{num12}} is a Positive Number</b>
+}
+@else if(num12==0){
+    <b>{{num12}} is a Zero</b>
+}
+@else{
+    <b>{{num12}} is a Negative Number</b>
+}
+<br>
+
+<p><b>Check Number is Odd Or Even</b></p>
+<br>
+<b>Enter a Number : </b><input type="text" [(ngModel)]="num13">
+<br>
+@if(num13%2==0){
+    <b>{{num13}} is a Even Number</b>
+}
+@else{
+    <b>{{num13}} is a Odd Number</b>
+}
+<br><br>
+
+<p><b>Find Out Greater Number than 3 numbers</b></p>
+<b>Enter First Number : </b> <input type="text" [(ngModel)]="num14">
+<b>Enter Second Number : </b> <input type="text" [(ngModel)]="num15">
+<b>Enter Third Number : </b> <input type="text" [(ngModel)]="num16">
+<br>
+@if(num14>num15){
+    @if(num14>num16){
+        <b>{{num14}} is Greatest Number</b>
+    }
+    @else{
+        <b>{{num16}} is Greatest Number</b>
+    }
+}
+@else if(num16>num14){
+
+    @if(num16>num15){
+        <b>{{num16}} is Greatest Number</b>
+    }
+    @else{
+        <b>{{num15}} is Greatest Number</b>
+
+    }
+}
+@else{
+    <b>{{num15}} is Greatest Number</b>
+}
+<br><br>
+<h4>for Demo</h4>
+
+<table>
+    <tbody>
+        <tr>
+            <th>Employee Id</th>
+            <th>Employee Name</th>
+            <th>Salary</th>
+        </tr>
+            @for(emp of employee; track emp)
+            {   
+                <tr>
+                <td>{{emp.eid}}</td>
+                <td>{{emp.ename}}</td>
+                <td>{{emp.salary}}</td>
+             </tr>
+            }  
+            @empty{
+                <div>No Data Found</div>
+            } 
+    </tbody>
+</table>
+
+<p><b>Employee Having salary more than 70000</b></p>
+
+<table>
+    <tbody>
+        <tr>
+            <th>Employee Id</th>
+            <th>Employee Name</th>
+            <th>Salary</th>
+        </tr>
+            @for(emp of employee; track emp)
+            {
+                @if(emp.salary>70000){
+                <tr>
+                <td>{{emp.eid}}</td>
+                <td>{{emp.ename}}</td>
+                <td>{{emp.salary}}</td>
+             </tr>
+            }      
+        }    
+        @empty{
+            <div>No Data Found</div>
+        }
+    </tbody>
+</table>
+
+<br><br>
+<h4>Switch Case Demo</h4>
+<br>
+<b>Choose Color : </b> <input type="text" [(ngModel)]="color1">
+@switch(color1.toLowerCase()){    
+    @case('red'){<b>This is<span style="color: red;">Red </span>Color</b>}
+    @case('yellow'){<b>This is<span style="color: yellow;">Yellow </span>Color</b>}
+    @case('blue'){<b>This is<span style="color: blue;">Blue </span>Color</b>}
+    @case('green'){<b>This is<span style="color: green;">Green </span>Color</b>}
+    @case('pink'){<b>This is<span style="color: pink;">Pink </span>Color</b>}
+    @default{<b>Please Choose one color</b>}
+}
+

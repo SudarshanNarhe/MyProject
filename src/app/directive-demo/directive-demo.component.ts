@@ -62,5 +62,16 @@ export class DirectiveDemoComponent {
         ]
     };
 
+    // for latest angular 17
+        num11:any
+
+        num12:any;
+        num13:any;
+
+        num14:any
+        num15:any
+        num16:any;
+
+        color1:string='';
 
 }
