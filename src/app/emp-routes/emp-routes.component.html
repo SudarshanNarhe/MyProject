@@ -1,0 +1,45 @@
+<p>emp-routes works!</p>
+
+<h2>Hello Sudarshan, I am In Employee Routes</h2>
+<br><br>
+
+<!-- <table>
+    <tbody>
+        <tr>
+            <th>Employee ID</th>
+            <th>Employee Name</th>
+            <th>Image</th>
+        </tr>
+        @for(emp of user;track emp){
+        <tr>
+            <td>{{emp.id}}</td>
+            <td>{{emp.first_name}}</td>
+            <td><img src="{{emp.avatar}}" alt="image"></td>
+        </tr>
+    }
+    </tbody>
+</table>
+ -->
+
+<br><br>
+<!-- 
+<ul *ngIf="userdata">
+    <li>{{userdata.id}}</li>
+    <li>{{userdata.first_name}}</li>
+    <li><img src="{{userdata.avatar}}" alt="img"></li>
+</ul> -->
+
+<table>
+    <tbody>
+        <tr>
+            <th>Employee ID</th>
+            <th>Employee Name</th>
+            <th>Image</th>
+        </tr>
+        <tr *ngIf="userdata">
+            <td>{{userdata.id}}</td>
+            <td>{{userdata.first_name}}</td>
+            <td><img src="{{userdata.avatar}}" alt="image"></td>
+        </tr>
+    </tbody>
+</table>

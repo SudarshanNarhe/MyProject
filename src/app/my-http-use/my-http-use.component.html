@@ -2,7 +2,7 @@
 
 <br><br>
 
-<table>
+<!-- <table>
     <tbody>
         <tr>
             <th>Employee ID</th>
@@ -14,6 +14,25 @@
             <td>{{emp.id}}</td>
             <td>{{emp.name}}</td>
             <td>{{emp.Salary}}</td>
+        </tr>
+    }
+    </tbody>
+</table> -->
+
+<br><br>
+<!-- For Imported link -->
+<table>
+    <tbody>
+        <tr>
+            <th>Employee ID</th>
+            <th>Employee Name</th>
+            <th>Image</th>
+        </tr>
+        @for(emp of user;track emp){
+        <tr>
+            <td><a [routerLink]="['/EmpData',emp.id]">{{emp.id}}</a></td>
+            <td>{{emp.first_name}}</td>
+            <td><img src="{{emp.avatar}}" alt="image"></td>
         </tr>
     }
     </tbody>

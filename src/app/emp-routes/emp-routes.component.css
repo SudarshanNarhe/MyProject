@@ -1,0 +1,14 @@
+
+
+*{
+    margin-left: 20px;
+}
+
+table,tr,td,th{
+    border: 2px solid;
+    border-collapse: collapse;
+}
+
+li{
+    list-style: none;
+}
