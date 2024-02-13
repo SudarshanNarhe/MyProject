@@ -7,7 +7,9 @@ import { Injectable } from '@angular/core';
 export class MyHttpService {
 
   //url="assets/User.json"
+
   url="https://reqres.in/api/users?page=2";
+  
   constructor(public myhttpclient:HttpClient) {
 
    }

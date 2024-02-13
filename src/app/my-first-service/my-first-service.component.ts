@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { MyLocalService } from '../my-local.service';
 
 @Component({
@@ -11,10 +11,12 @@ import { MyLocalService } from '../my-local.service';
 export class MyFirstServiceComponent implements OnInit{
 
   employee :any
+  
+  Myser : MyLocalService=inject(MyLocalService)
 
-  constructor(public Myser:MyLocalService){
+  // constructor(public Myser:MyLocalService){
 
-  }
+  // }
   ngOnInit(): void {
       this.employee=this.Myser.getEmployee();
       console.log(this.employee)
