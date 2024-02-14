@@ -14,11 +14,11 @@
     <label for="releaseDate"><b>ReleaseDate : </b></label>
     <input type="text" placeholder="Enter Movie Release Date" class="form-control" required formControlName="rDate" id="id">
     <br>
-    <input type="submit" value="Add Movie" class="btn btn-primary">
-    <input type="button" value="Cancel" (click)="clearform()" class="btn btn-primary"> 
+    <input type="submit" value="Add Movie" class="btn btn-primary buttonFontStyle" onclick="alert('Data Added Succesfully...!!!')">
+    <input type="button" value="Cancel" (click)="clearform()" class="btn btn-info buttonFontStyle"> 
 </form>
 </div>
-<input type="button" value="Add Data" class="btn btn-success" *ngIf="isEdit" (click)="toggleForm()">   
+<input type="button" value="Add Data" class="btn btn-dark buttonFontStyle" *ngIf="isEdit" (click)="toggleForm()" id="addbutton">   
 <br>
 <br>
 <div class="border div2">
@@ -41,8 +41,8 @@
                 <td>{{mo.tprice}}</td>
                 <td>{{mo.rDate}}</td>
                 <td>
-                    <input type="button" value="Edit" (click)="EditMovie(mo)" class="btn btn-warning" (click)="EditMovie(mo)">
-                    <input type="button" value="Delete" (click)="DeleteMovie(mo.mid)" class="btn btn-danger">
+                    <input type="button" value="Edit" (click)="EditMovie(mo)" class="btn btn-warning buttonFontStyle" (click)="EditMovie(mo)">
+                    <input type="button" value="Delete" (click)="DeleteMovie(mo.mid)" class="btn btn-danger buttonFontStyle">
                 </td>
             </tr>
         }
@@ -55,7 +55,7 @@
 <br>
 <h4>Update Data</h4>
 <br>
-<form [formGroup]="movieForm" (ngSubmit)="SaveData()" class="form1 " >
+<form [formGroup]="movieForm" (ngSubmit)="SaveData()" class="form1" >
     <label for="MovieId"><b>Movie Id : </b></label>
     <input type="text" placeholder="Enter Movie Id" class="form-control" required formControlName="mid" id="id">
     <label for="MovieName"><b>Movie Name : </b></label>
@@ -65,8 +65,8 @@
     <label for="releaseDate"><b>ReleaseDate : </b></label>
     <input type="text" placeholder="Enter Movie Release Date" class="form-control" required formControlName="rDate" id="id">
     <br>
-    <input type="submit" value="Update" class="btn btn-primary" >
-    <input type="button" value="Cancel" (click)="clearform()" class="btn btn-primary">    
+    <input type="submit" value="Update" class="btn btn-primary buttonFontStyle" >
+    <input type="button" value="Cancel" (click)="clearform()" class="btn btn-info buttonFontStyle">    
 </form>
 </div>
 
