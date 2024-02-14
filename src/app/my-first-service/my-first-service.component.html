@@ -1,18 +1,34 @@
 <h5>Hello Sudarshan, I am in the First Service Component</h5>
-<br><br>
+<br>
 <table>
     <tbody>
         <tr>
             <th>Employee Id</th>
             <th>Employee Name</th>
             <th>Salary</th>
+            <th>Actions</th>
         </tr>
         @for(emp of employee; track emp){
             <tr>
                 <td>{{emp.eid}}</td>
                 <td>{{emp.ename}}</td>
                 <td>{{emp.salary}}</td>
+                <td><input type="button" value="Edit" class="btn btn-primary" (click)="editEmp(emp)">
+                    <input type="button" value="Delete" class="btn btn-danger" (click)="deleteEmp(emp.eid)"></td>
             </tr>
         }
     </tbody>
 </table>
+<br><br>
+<form [formGroup]="empform" (ngSubmit)="SaveData()">
+    <label for="inputData"><b>Employee Id</b></label>
+    <input type="text" placeholder="Enter Employee id " class="form-control" required formControlName="eid" id="id">
+    <label for="empName"><b>Employee Name</b></label>
+    <input type="text" placeholder="Enter Employee Name" class="form-control" required formControlName="ename" id="name">
+    <label for="salary"><b>Salary</b></label>
+    <input type="text" placeholder="Enter Salary" class="form-control" required formControlName="salary" id="salary">
+    <br>
+    <input type="submit" value="AddEmployee" class="btn btn-success">
+    <input type="submit" value="UpdateEmployee" class="btn btn-warning">
+    <input type="button" value="Cancel" (click)="clearform()" class="btn btn-primary">    
+</form>

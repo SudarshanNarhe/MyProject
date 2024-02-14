@@ -1,0 +1,72 @@
+
+<br>
+<div class="border div1" *ngIf="!isEdit">
+<br>
+<h4>Create Data</h4>
+<br>
+<form [formGroup]="movieForm" (ngSubmit)="SaveData()" class="form1">
+    <label for="MovieId"><b>Movie Id : </b></label>
+    <input type="text" placeholder="Enter Movie Id" class="form-control" required formControlName="mid" id="id">
+    <label for="MovieName"><b>Movie Name : </b></label>
+    <input type="text" placeholder="Enter Movie Name" class="form-control" required formControlName="mname" id="id">
+    <label for="MoviePrice"><b>Price : </b></label>
+    <input type="text" placeholder="Enter Movie Price" class="form-control" required formControlName="tprice" id="id">
+    <label for="releaseDate"><b>ReleaseDate : </b></label>
+    <input type="text" placeholder="Enter Movie Release Date" class="form-control" required formControlName="rDate" id="id">
+    <br>
+    <input type="submit" value="Add Movie" class="btn btn-primary">
+    <input type="button" value="Cancel" (click)="clearform()" class="btn btn-primary"> 
+</form>
+</div>
+<input type="button" value="Add Data" class="btn btn-success" *ngIf="isEdit" (click)="toggleForm()">   
+<br>
+<br>
+<div class="border div2">
+<br>
+<h4>Read Data & (Edit and Delete Data)</h4>
+<br>
+<table>
+    <tbody>
+        <tr>
+            <th>Movie ID</th>
+            <th>Movie Name</th>
+            <th>Price</th>
+            <th>Release Date</th>
+            <th>Actions</th>
+        </tr>
+        @for(mo of movies; track mo){
+            <tr>
+                <td>{{mo.mid}}</td>
+                <td>{{mo.mname}}</td>
+                <td>{{mo.tprice}}</td>
+                <td>{{mo.rDate}}</td>
+                <td>
+                    <input type="button" value="Edit" (click)="EditMovie(mo)" class="btn btn-warning" (click)="EditMovie(mo)">
+                    <input type="button" value="Delete" (click)="DeleteMovie(mo.mid)" class="btn btn-danger">
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+</div>
+
+<br>
+<div class="border div1" *ngIf="isEdit">
+<br>
+<h4>Update Data</h4>
+<br>
+<form [formGroup]="movieForm" (ngSubmit)="SaveData()" class="form1 " >
+    <label for="MovieId"><b>Movie Id : </b></label>
+    <input type="text" placeholder="Enter Movie Id" class="form-control" required formControlName="mid" id="id">
+    <label for="MovieName"><b>Movie Name : </b></label>
+    <input type="text" placeholder="Enter Movie Name" class="form-control" required formControlName="mname" id="id">
+    <label for="MoviePrice"><b>Price : </b></label>
+    <input type="text" placeholder="Enter Movie Price" class="form-control" required formControlName="tprice" id="id">
+    <label for="releaseDate"><b>ReleaseDate : </b></label>
+    <input type="text" placeholder="Enter Movie Release Date" class="form-control" required formControlName="rDate" id="id">
+    <br>
+    <input type="submit" value="Update" class="btn btn-primary" >
+    <input type="button" value="Cancel" (click)="clearform()" class="btn btn-primary">    
+</form>
+</div>
+

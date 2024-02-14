@@ -1,13 +1,13 @@
-
 *{
     margin-left: 20px;
-    bottom: 20px;
+    
 }
 
 table,tr,td,th{
     border:2px solid;
     border-collapse: collapse;
     text-align: center;
+    margin-bottom: 20px;
 }
 tr{
     height: 50px;
@@ -16,7 +16,17 @@ td{
     width: 200px;
 }
 
-form{
+.form1{
+    width: 350px;
+    line-height: 30px;
+}
+
+.div1{
     width: 500px;
-   line-height: 40px;
+    height: 450px;
+}
+
+.div2{
+    width: 80%;
+    height: 45%;
 }
