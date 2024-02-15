@@ -12,11 +12,12 @@ import { PostDataUserComponent } from './post-data-user/post-data-user.component
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { EmpRoutesComponent } from './emp-routes/emp-routes.component';
 import { MovieComponent } from './movie/movie.component';
+import { JsoncrudeUseComponent } from './jsoncrude-use/jsoncrude-use.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,RouterModule,HomeComponent,DirectiveDemoComponent,AttributeDemoComponent,CompopipeComponent,FormDemoComponent,ParentComponent,MyFirstServiceComponent,MyHttpUseComponent,PostDataUserComponent,PageNotFoundComponent,EmpRoutesComponent,MovieComponent],
+  imports: [RouterOutlet,RouterModule,HomeComponent,DirectiveDemoComponent,AttributeDemoComponent,CompopipeComponent,FormDemoComponent,ParentComponent,MyFirstServiceComponent,MyHttpUseComponent,PostDataUserComponent,PageNotFoundComponent,EmpRoutesComponent,MovieComponent,JsoncrudeUseComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

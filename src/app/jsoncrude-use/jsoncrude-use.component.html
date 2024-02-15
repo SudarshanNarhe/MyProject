@@ -1,0 +1,36 @@
+<h2>Employee Data</h2>
+<br>
+<table>
+    <tbody>
+        <tr>
+            <th>Employee Id</th>
+            <th>Employee Name</th>
+            <th>Salary</th>
+            <th>Actions</th>
+        </tr>
+        @for(emp of employee; track emp){
+        <tr>
+            <td>{{emp.id}}</td>
+            <td>{{emp.name}}</td>
+            <td>{{emp.salary}}</td>
+            <td>
+                <input type="button" value="Edit" class="btn btn-primary" (click)="EditEmp(emp)">
+                <input type="button" value="Delete" class="btn btn-danger" (click)="deleteEmp(emp.eid)">
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+<br><br>
+<form [formGroup]="empform" (ngSubmit)="SaveData()">
+    <label for="inputData"><b>Employee Id</b></label>
+    <input type="text" placeholder="Enter Employee id " class="form-control" required formControlName="id" id="id">
+    <label for="empName"><b>Employee Name</b></label>
+    <input type="text" placeholder="Enter Employee Name" class="form-control" required formControlName="name" id="name">
+    <label for="salary"><b>Salary</b></label>
+    <input type="text" placeholder="Enter Salary" class="form-control" required formControlName="salary" id="salary">
+    <br>
+    <input type="submit" value="AddEmployee" class="btn btn-success">
+    <input type="submit" value="UpdateEmployee" class="btn btn-warning">
+    <input type="button" value="Cancel" (click)="clearform()" class="btn btn-primary">    
+</form>

@@ -7,8 +7,10 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:MyProject": "node dist/my-project/server/server.mjs"
+    "serve:ssr:MyProject": "node dist/my-project/server/server.mjs",
+    "json:server" : "json-server --watch database.json --port 3000"
   },
+  
   "private": true,
   "dependencies": {
     "@angular/animations": "^17.1.0",
