@@ -48,18 +48,6 @@ export class JsoncrudeUseComponent implements OnInit{
       // console.log(this.employee); 
     });      
   }
-  get id()
-  {
-   return this.empform.get('id')
-  }
-  get fname()
-  {
-   return this.empform.get('fname')
-  }
-  get salary()
-  {
-    return this.empform.get('salary')
-  }
   
   EditEmp(emp:any){
       this.isUpdate=true;
@@ -70,10 +58,13 @@ export class JsoncrudeUseComponent implements OnInit{
       )
   }
 
-  deleteEmp(id:any){
-      let res=confirm("Do you want to delete "+id+" ?");
-      if(res==true){
-        this.Myser.deleteEmployee(id).subscribe(result=>{
+  deleteEmp(id:any)
+  {
+      let res=confirm('Do you want to delete'+ id+"?")
+      if(res==true)
+      { 
+        // console.log(typeof id)
+        this.Myser.deleteData(id).subscribe(result=>{
           this.getAllemployees()
         })
       }
@@ -82,13 +73,17 @@ export class JsoncrudeUseComponent implements OnInit{
   SaveData(){
     let emp=this.empform.value
     if(!this.isUpdate){
-      this.Myser.addEmployee(emp).subscribe(result=>{})
+      this.Myser.addEmployee(emp).subscribe(result=>{
+        this.getAllemployees();
+      })
     }
     else{
-        let id=parseInt(this.empform.value.id)
-        this.Myser.UpdateEmployee(id,emp).subscribe(result=>{})
+        let id=(this.empform.value.id)
+        this.Myser.UpdateEmployee(id,emp).subscribe(result=>{
+          this.getAllemployees();
+        })
     }
-    this.getAllemployees();
+   
     this.isUpdate=false;
     this.empform.reset();
   }

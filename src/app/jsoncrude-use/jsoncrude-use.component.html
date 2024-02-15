@@ -15,7 +15,7 @@
             <td>{{emp.salary}}</td>
             <td>
                 <input type="button" value="Edit" class="btn btn-primary" (click)="EditEmp(emp)">
-                <input type="button" value="Delete" class="btn btn-danger" (click)="deleteEmp(emp.eid)">
+                <input type="button" value="Delete" class="btn btn-danger" (click)="deleteEmp(emp.id)">
             </td>
         </tr>
     }
@@ -23,9 +23,9 @@
 </table>
 <br><br>
 <form [formGroup]="empform" (ngSubmit)="SaveData()">
-    <label for="inputData"><b>Employee Id</b></label>
+    <label for="id"><b>Employee Id</b></label>
     <input type="text" placeholder="Enter Employee id " class="form-control" required formControlName="id" id="id">
-    <label for="empName"><b>Employee Name</b></label>
+    <label for="name"><b>Employee Name</b></label>
     <input type="text" placeholder="Enter Employee Name" class="form-control" required formControlName="name" id="name">
     <label for="salary"><b>Salary</b></label>
     <input type="text" placeholder="Enter Salary" class="form-control" required formControlName="salary" id="salary">

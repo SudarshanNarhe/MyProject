@@ -35,8 +35,8 @@ export class JsoncrudService {
   //   )
   // }
 
-  deleteEmployee(id:any):Observable<any>{
-    console.log("hii")
+  deleteData(id:any):Observable<any>{
+    // console.log("hii")
     return this.myhttpclient.delete<any>(this.url+"/"+id).pipe(
       catchError(this.errorHandler)
     )

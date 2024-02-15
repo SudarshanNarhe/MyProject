@@ -6,29 +6,24 @@
       "salary": 89000
     },
     {
-      "id": "2",
-      "name": "Suraj",
-      "salary": 79000
-    },
-    {
       "id": "3",
       "name": "Yogesh",
       "salary": 90000
     },
     {
-      "id": "4",
-      "name": "Prit",
-      "salary": 56000
-    },
-    {
       "id": "5",
       "name": "Aadi",
+      "salary": "75000"
+    },
+    {
+      "id": "2",
+      "name": "Suraj",
       "salary": 78000
     },
     {
-      "id": "10",
-      "name": "Aadarsh",
-      "salary": "12000"
+      "id": "4",
+      "name": "Pritam",
+      "salary": "87000"
     }
   ]
 }
