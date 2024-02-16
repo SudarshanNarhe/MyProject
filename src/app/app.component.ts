@@ -13,14 +13,32 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { EmpRoutesComponent } from './emp-routes/emp-routes.component';
 import { MovieComponent } from './movie/movie.component';
 import { JsoncrudeUseComponent } from './jsoncrude-use/jsoncrude-use.component';
+import { EmployeejsonUseComponent } from './employeejson-use/employeejson-use.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,RouterModule,HomeComponent,DirectiveDemoComponent,AttributeDemoComponent,CompopipeComponent,FormDemoComponent,ParentComponent,MyFirstServiceComponent,MyHttpUseComponent,PostDataUserComponent,PageNotFoundComponent,EmpRoutesComponent,MovieComponent,JsoncrudeUseComponent],
+  imports: [
+    RouterOutlet,
+    RouterModule,
+    HomeComponent,
+    DirectiveDemoComponent,
+    AttributeDemoComponent,
+    CompopipeComponent,
+    FormDemoComponent,
+    ParentComponent,
+    MyFirstServiceComponent,
+    MyHttpUseComponent,
+    PostDataUserComponent,
+    PageNotFoundComponent,
+    EmpRoutesComponent,
+    MovieComponent,
+    JsoncrudeUseComponent,
+    EmployeejsonUseComponent
+  ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
-    title = 'MyProject';
+  title = 'MyProject';
 }

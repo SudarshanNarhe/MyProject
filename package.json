@@ -8,7 +8,9 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:MyProject": "node dist/my-project/server/server.mjs",
-    "json:server" : "json-server --watch database.json --port 3000"
+    "json:server:database": "json-server --watch database.json --port 3000",
+    "json:server:employee": "json-server --watch employee.json --port 3000"
+    
   },
   
   "private": true,

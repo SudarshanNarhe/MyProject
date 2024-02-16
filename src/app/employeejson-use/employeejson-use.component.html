@@ -1,0 +1,65 @@
+
+<br>
+<div class="border div1" *ngIf="!isEdit">
+<br>
+<h4>Create Data</h4>
+<br>
+<form [formGroup]="empForm" (ngSubmit)="SaveData()" class="form1">
+    <label for="id"><b>Employee Id : </b></label>
+    <input type="text" placeholder="Enter Employee Id" class="form-control" required formControlName="id" id="id">
+    <label for="name"><b>Employee Name : </b></label>
+    <input type="text" placeholder="Enter Employee Name" class="form-control" required formControlName="name" id="id">
+    <label for="Position"><b>Position : </b></label>
+    <input type="text" placeholder="Enter Employee Position" class="form-control" required formControlName="Position" id="id">
+    <br>
+    <input type="submit" value="Add Data" class="btn btn-primary buttonFontStyle" onclick="alert('Data Added Succesfully...!!!')">
+    <input type="button" value="Cancel" (click)="clearform()" class="btn btn-info buttonFontStyle"> 
+</form>
+</div>
+<input type="button" value="Add Data" class="btn btn-dark buttonFontStyle" *ngIf="isEdit" (click)="toggleForm()" id="addbutton">   
+<br>
+<div class="border div2">
+<br>
+<h3>Employee Data</h3>
+<br><br>
+<table>
+    <tbody>
+        <tr>
+            <th>Employee Id</th>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Actions</th>
+        </tr>
+        @for(emp of employeeData; track emp){
+            <tr>
+                <td>{{emp.id}}</td>
+                <td>{{emp.name}}</td>
+                <td>{{emp.Position}}</td>
+                <td>
+                    <input type="button" value="Edit" (click)="editData()" class="btn btn-warning">
+                    <input type="button" value="Delete" (click)="deleteData()" class="btn btn-danger">
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+</div>
+
+<br>
+<div class="border div1" *ngIf="isEdit">
+<br>
+<h4>Update Data</h4>
+<br>
+<form [formGroup]="empForm" (ngSubmit)="SaveData()" class="form1">
+    <label for="id"><b>Employee Id : </b></label>
+    <input type="text" placeholder="Enter Employee Id" class="form-control" required formControlName="id" id="id">
+    <label for="name"><b>Employee Name : </b></label>
+    <input type="text" placeholder="Enter Employee Name" class="form-control" required formControlName="name" id="id">
+    <label for="Position"><b>Position : </b></label>
+    <input type="text" placeholder="Enter Employee Position" class="form-control" required formControlName="Position" id="id">
+   <br>
+    <input type="submit" value="Update" class="btn btn-primary buttonFontStyle" >
+    <input type="button" value="Cancel" (click)="clearform()" class="btn btn-info buttonFontStyle">    
+</form>
+</div>
+
