@@ -94,7 +94,7 @@
             <input type="checkbox"  name="subjects" [value]="subject.name" required #subjects="ngModel" [(ngModel)]="subject.selected" [ngModelOptions]="{ standalone: true }" class="form-check-input" >
             {{subject.name}}
           </div>
-          <div *ngIf="!areSubjectsSelected()" >
+          <div *ngIf="!areSubjectsSelected() && (contactForm.controls['subjects']?.dirty || contactForm.controls['subjects']?.touched)" class="error"  >
             <p>At least one subject must be selected</p>
          </div>
     </div>
@@ -106,7 +106,7 @@
           <option value="" disabled selected>Select a state</option>
           <option *ngFor="let state of Mycontact.states" [value]="state">{{ state }}</option>
         </select>
-        <div *ngIf="!Mycontact.selectedState" class="error">
+        <div *ngIf="!Mycontact.selectedState && (contactForm.controls['states']?.dirty || contactForm.controls['states']?.touched)" class="error">
             <p>Please select a state</p></div>
       </div>
 
