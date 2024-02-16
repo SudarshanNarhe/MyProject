@@ -14,6 +14,7 @@ import { EmpRoutesComponent } from './emp-routes/emp-routes.component';
 import { MovieComponent } from './movie/movie.component';
 import { JsoncrudeUseComponent } from './jsoncrude-use/jsoncrude-use.component';
 import { EmployeejsonUseComponent } from './employeejson-use/employeejson-use.component';
+import { LoginComponent } from './login/login.component';
 
 @Component({
   selector: 'app-root',
@@ -34,7 +35,8 @@ import { EmployeejsonUseComponent } from './employeejson-use/employeejson-use.co
     EmpRoutesComponent,
     MovieComponent,
     JsoncrudeUseComponent,
-    EmployeejsonUseComponent
+    EmployeejsonUseComponent,
+    LoginComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

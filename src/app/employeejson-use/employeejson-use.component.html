@@ -36,8 +36,8 @@
                 <td>{{emp.name}}</td>
                 <td>{{emp.Position}}</td>
                 <td>
-                    <input type="button" value="Edit" (click)="editData()" class="btn btn-warning">
-                    <input type="button" value="Delete" (click)="deleteData()" class="btn btn-danger">
+                    <input type="button" value="Edit" (click)="editData(emp)" class="btn btn-warning">
+                    <input type="button" value="Delete" (click)="deleteData(emp.id)" class="btn btn-danger">
                 </td>
             </tr>
         }

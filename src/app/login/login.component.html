@@ -1,0 +1,120 @@
+
+
+<div class="container mt-5">
+
+<div class="form-area">
+
+<h3>Login Page</h3>
+
+<form #contactForm="ngForm" (ngSubmit)="contactForm.form.valid && onSubmit()" novalidate>
+
+    <div class="form-group">
+        <label for="username">User Name : </label> 
+        <input type="text" name="username" required minlength="8" #username="ngModel"
+        [(ngModel)]="Mycontact.username" class="form-control" id="username">
+    </div>
+    <div *ngIf="!username?.valid && (username?.dirty || username?.touched)" class="error">
+        <div *ngIf="username.errors?.['required']">
+            <p>username Name is required</p>
+        </div>
+        <div *ngIf="username.errors?.['minlength']">
+            <p>username name minimum length is {{username.errors?.['minlength']?.requiredLength}}</p>
+        </div>
+    </div>
+    <div>
+        <div class="form-group">
+            <label for="email">Email : </label>
+            <input type="text" name="email" required mail #email="ngModel"
+             [(ngModel)]="Mycontact.email" 
+             pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
+             class="form-control" id="email">
+        </div>
+        <div *ngIf="!email.valid && (email?.dirty || email?.touched)" class="error">
+            <div *ngIf="email.errors?.['required']">
+                <p>Email is required</p>
+            </div>
+            <div *ngIf="email.errors?.['pattern']">
+                <p>Invalid Email address</p>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="form-group">
+            <label for="password">Password : </label>
+            <input type="password" name="password" required #password="ngModel"
+             [(ngModel)]="Mycontact.password" 
+             pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+             class="form-control" id="password">
+        </div>
+        <div *ngIf="!password.valid && (password.dirty || password.touched)" class="error">
+            <div *ngIf="password.errors?.['required']">
+                <p>Password is required</p>
+            </div>
+            <div *ngIf="password.errors?.['pattern']">
+                <p>Must contain at least <b>1 Number</b> and<b> 1 UpperCase</b> and <b>lowercase letter</b> , and at least 8 or more characters</p>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="form-group">
+            <label for="confirmPass">Confirm Password : </label>
+            <input type="password" name="confirmPass" required #confirmPass="ngModel"
+             [(ngModel)]="Mycontact.confirmPass" 
+             [pattern]="Mycontact.password"
+             class="form-control" id="confirmPass">
+        </div>
+        <div *ngIf="!confirmPass.valid && (confirmPass.dirty || confirmPass.touched)" class="error">
+            <div *ngIf="confirmPass.errors?.['required']">
+                <p>Password is required</p>
+            </div>
+            <div *ngIf="confirmPass.errors?.['pattern']">
+                <p>Password not match</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="gender" class="form-check-label">Gender : </label><br>
+        <input type="radio" name="gender" value="Male" required #gender="ngModel" [(ngModel)]="Mycontact.gender" class="form-check-input"> Male 
+        <input type="radio" name="gender" value="Female" required #gender="ngModel" [(ngModel)]="Mycontact.gender" class="form-check-input"> Female 
+        
+        <div *ngIf="!gender?.valid &&(gender?.dirty || gender?.touched)" class="error" >
+
+            <div *ngIf="gender.errors?.['required']">
+                    <p>Gender is must</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="subject" class="form-check-label" >Subject : </label>
+        <div *ngFor="let subject of Mycontact.subjects">
+            <input type="checkbox"  name="subjects" [value]="subject.name" required #subjects="ngModel" [(ngModel)]="subject.selected" [ngModelOptions]="{ standalone: true }" class="form-check-input" >
+            {{subject.name}}
+          </div>
+          <div *ngIf="!areSubjectsSelected()" >
+            <p>At least one subject must be selected</p>
+         </div>
+    </div>
+    
+
+      <div class="form-group">
+        <label for="state">State:</label>
+        <select name="state" [(ngModel)]="Mycontact.selectedState" required class="form-control">
+          <option value="" disabled selected>Select a state</option>
+          <option *ngFor="let state of Mycontact.states" [value]="state">{{ state }}</option>
+        </select>
+        <div *ngIf="!Mycontact.selectedState" class="error">
+            <p>Please select a state</p></div>
+      </div>
+
+      <div>
+        <button type="submit" [disabled]="!contactForm.valid" class="btn btn-primary" >Submit</button>
+        <button type="reset" class="btn btn-danger">Reset</button>
+      </div>
+
+</form>
+</div>
+</div>

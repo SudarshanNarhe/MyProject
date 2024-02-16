@@ -52,7 +52,7 @@ export class EmployeejsonUseComponent implements OnInit{
       )
     }
 
-    deleteData(){
+    deleteData(id:any){
 
     }
 
@@ -68,5 +68,6 @@ export class EmployeejsonUseComponent implements OnInit{
       this.isEdit=!this.isEdit;
       this.clearform();
     }
+
 
 }
