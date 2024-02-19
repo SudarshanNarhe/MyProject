@@ -1,0 +1,74 @@
+<h4>Template Driven form using angular 17</h4>
+
+<form name="form" #f="ngForm" (ngSubmit)="f.form.valid && OnSubmit()" novalidate class="form-container">
+
+    <div>
+        <label >Full Name </label>
+        <input type="text" class="form-control" name="fullname" [(ngModel)]="form.fullname"
+            required #fullname="ngModel" [ngClass]="{'is-invalid':f.submitted && fullname.errors}">
+        @if(f.submitted && fullname.errors){
+            @if(fullname.errors['required']){
+                <p>fullname is required</p>
+            }
+        }
+    </div>
+
+    <div>
+        <label >Username </label>
+        <input type="text" class="form-control" name="username" [(ngModel)]="form.username" required
+            minlength="8" maxlength="20" #username="ngModel" [ngClass]="{'is-invalid': f.submitted && username.errors}">
+        @if(f.submitted && username.errors){
+            @if(username.errors['required']){
+                <p>username is required</p>
+            }
+            @if(username.errors['minlength']){
+                <p>username must be at least 8 characters</p>
+            }
+            @if(username.errors['maxlength']){
+                <p>username must be at less than 20 characters</p>
+            }
+        }
+    </div>
+
+    <div>
+        <label >Mail</label>
+        <input type="mail" class="form-control" name="email" [(ngModel)]="form.email" required email #email="ngModel"
+            [ngClass]="{'is-invalid':f.submitted && email.errors}">
+        @if(f.submitted && email.errors){
+            @if(email.errors['required']){
+                <p>email required</p>
+            }
+            @if(email.errors['email']){
+                <p>Invalid mail</p>
+            }
+        }
+    </div>
+    <div>
+    <label >Password</label>
+    <input type="password" class="form-control" name="password" [(ngModel)]="form.password" required  #password="ngModel"
+        [ngClass]="{'is-invalid':f.submitted && password.errors}" minlength="10">
+    @if(f.submitted && password.errors){
+        @if(password.errors['required']){
+            <p>Password required</p>
+        }
+        @if(password.errors['password']){
+            <p>password should contain more than 8 characters</p>
+        }
+    }
+    </div>
+    <div>
+        <input type="checkbox" class="form-check-input" name="acceptTerms" [(ngModel)]="form.acceptTerms" required #acceptTerms="ngModel"
+            [ngClass]="{'is-invalid':f.submitted && acceptTerms.errors}">
+            <p><b style="color: black;">I have read and agree to Terms and Conditions</b></p>
+        @if(f.submitted && acceptTerms.errors){
+            @if(acceptTerms.errors['required']){
+                <p>Accept Terms is required</p>
+            }
+            
+        }
+    </div>
+    <div>
+        <button type="submit" class="btn btn-primary">Register</button>
+        <button type="button" (click)="OnReset(f)" class="btn btn-warning">Reset</button>
+    </div>
+</form>

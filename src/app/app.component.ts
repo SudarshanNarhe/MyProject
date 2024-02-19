@@ -15,6 +15,7 @@ import { MovieComponent } from './movie/movie.component';
 import { JsoncrudeUseComponent } from './jsoncrude-use/jsoncrude-use.component';
 import { EmployeejsonUseComponent } from './employeejson-use/employeejson-use.component';
 import { LoginComponent } from './login/login.component';
+import { TemplateDriven17Component } from './template-driven17/template-driven17.component';
 
 @Component({
   selector: 'app-root',
@@ -36,7 +37,8 @@ import { LoginComponent } from './login/login.component';
     MovieComponent,
     JsoncrudeUseComponent,
     EmployeejsonUseComponent,
-    LoginComponent
+    LoginComponent,
+    TemplateDriven17Component
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
