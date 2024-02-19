@@ -16,6 +16,7 @@ import { JsoncrudeUseComponent } from './jsoncrude-use/jsoncrude-use.component';
 import { EmployeejsonUseComponent } from './employeejson-use/employeejson-use.component';
 import { LoginComponent } from './login/login.component';
 import { TemplateDriven17Component } from './template-driven17/template-driven17.component';
+import { ReactiveFormDemoComponent } from './reactive-form-demo/reactive-form-demo.component';
 
 @Component({
   selector: 'app-root',
@@ -38,7 +39,8 @@ import { TemplateDriven17Component } from './template-driven17/template-driven17
     JsoncrudeUseComponent,
     EmployeejsonUseComponent,
     LoginComponent,
-    TemplateDriven17Component
+    TemplateDriven17Component,
+    ReactiveFormDemoComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

@@ -1,0 +1,78 @@
+<h4>Demo for Reactive form</h4>
+
+<div class="form-container">
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <div>
+        <label >Full Name </label>
+        <input type="text" formControlName="fullname" class="form-control" 
+            [ngClass]="{'is-invalid':submitted && f['fullname'].errors}">
+        @if(submitted && f['fullname'].errors){
+            @if(f['fullname'].errors['required']){
+                <p>full name must be required</p>
+            }
+        }
+    </div>
+
+    <div>
+        <label >Username </label>
+        <input type="text" formControlName="username" class="form-control" 
+            [ngClass]="{'is-invalid':submitted && f['username'].errors}">
+        @if(submitted && f['username'].errors){
+            @if(f['username'].errors['required']){
+                <p>username must be required</p>
+            }
+            @if(f['username'].errors['minlength']){
+                <p>username must be at least 8 characters</p>
+            }
+            @if(f['username'].errors['maxlength']){
+                <p>username must be less than 20 characters</p>
+            }
+        }
+    </div>
+
+    <div>
+        <label >Email </label>
+        <input type="email" formControlName="email" class="form-control" 
+            [ngClass]="{'is-invalid':submitted && f['email'].errors}">
+        @if(submitted && f['email'].errors){
+            @if(f['email'].errors['required']){
+                <p>Email must be required</p>
+            }
+            @if(f['email'].errors['email']){
+                <p>Invalid mail address</p>
+            }
+        }
+    </div>
+
+    <div>
+        <label >Password </label>
+        <input type="password" formControlName="password" class="form-control" 
+            [ngClass]="{'is-invalid':submitted && f['password'].errors}">
+        @if(submitted && f['password'].errors){
+            @if(f['password'].errors['required']){
+                <p>password must be required</p>
+            }
+            @if(f['password'].errors['minlength']){
+                <p>password must be at least 8 characters</p>
+            }
+            
+        }
+    </div>
+
+    <div>
+        <input type="checkbox" formControlName="acceptTerms" class="form-check-input" 
+            [ngClass]="{'is-invalid':submitted && f['acceptTerms'].errors}">
+            <p><b style="color: black;">I have read and agree to Terms and Conditions</b></p>
+        @if(submitted && f['acceptTerms'].errors){
+            <p>Accept the terms and Conditions</p>
+        }
+    </div>
+
+    <div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="button" (click)="onReset()" class="btn btn-warning">Reset</button>
+    </div>
+
+</form>
+</div>
