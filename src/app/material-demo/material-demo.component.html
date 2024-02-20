@@ -1,0 +1,49 @@
+<p>material-demo works!</p>
+
+<form class="example-form">
+  <mat-form-field>
+    <mat-label> Name </mat-label>
+    <input matInput placeholder="Mr.Suraj" value="Suraj" />
+  </mat-form-field>
+  <br />
+  <button mat-raised-button color="primary">Submit</button>
+  <mat-slide-toggle>Keep assign</mat-slide-toggle>
+</form>
+<br />
+<br />
+<mat-progress-bar mode="determinate" value="67"></mat-progress-bar>
+<br /><br />
+<mat-form-field>
+  <mat-label>Choose a date</mat-label>
+  <input matInput [matDatepicker]="picker" />
+  <mat-hint>MM/DD/YYYY</mat-hint>
+  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+
+<mat-icon aria-hidden="false" matBadge="5" matBadgeColor="primary"
+  >home</mat-icon
+>
+
+<!-- <mat-spinner></mat-spinner> -->
+
+<mat-slider
+  min="0"
+  max="100000"
+  step="1000"
+  showTickMarks
+  discrete
+  [displayWith]="formatLabel"
+>
+  <input matSliderThumb />
+</mat-slider>
+
+<br><br>
+<mat-toolbar color="primary">
+    <span><mat-icon>apps</mat-icon>My Application</span>
+    <button mat-raised-button ><mat-icon>home</mat-icon>Home</button>
+    <button mat-raised-button ><mat-icon>info</mat-icon>About_Us</button>
+    <button mat-raised-button ><mat-icon>login</mat-icon>Login</button>
+    <button mat-raised-button ><mat-icon>mail</mat-icon>Contact</button>
+    <button mat-raised-button ><mat-icon>shopping_cart</mat-icon>Orders</button>
+  </mat-toolbar>

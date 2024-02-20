@@ -17,6 +17,11 @@ import { EmployeejsonUseComponent } from './employeejson-use/employeejson-use.co
 import { LoginComponent } from './login/login.component';
 import { TemplateDriven17Component } from './template-driven17/template-driven17.component';
 import { ReactiveFormDemoComponent } from './reactive-form-demo/reactive-form-demo.component';
+import { MaterialDemoComponent } from './material-demo/material-demo.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+
 
 @Component({
   selector: 'app-root',
@@ -40,7 +45,11 @@ import { ReactiveFormDemoComponent } from './reactive-form-demo/reactive-form-de
     EmployeejsonUseComponent,
     LoginComponent,
     TemplateDriven17Component,
-    ReactiveFormDemoComponent
+    ReactiveFormDemoComponent,
+    MaterialDemoComponent,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

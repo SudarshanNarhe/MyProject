@@ -5,4 +5,8 @@
     align-items: center;
     justify-content: space-evenly;
     
-} */
+}*/
+
+mat-toolbar{
+    justify-content: space-between;
+}

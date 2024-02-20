@@ -1,0 +1,17 @@
+
+.example-form{
+    min-width: 200px;
+    max-width: 500px;
+    width: 100%;
+}
+
+mat-slider {
+    width: 800px;
+
+  }
+
+mat-toolbar{
+    justify-content: space-evenly;
+}
+
+

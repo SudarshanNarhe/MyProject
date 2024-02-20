@@ -24,9 +24,21 @@
     <li><a [routerLink]="['/About_Us']">About Us</a></li>
     <li><a [routerLink]="['/Data']">Data</a></li>
     <li><a [routerLink]="['/Emp']">Employee List</a></li>
-</ul>
+</ul> -->
+<mat-toolbar color="primary">
+    <span><mat-icon>apps</mat-icon>My Project</span>
+    <button mat-raised-button [routerLink]="['/Login']"><mat-icon>login</mat-icon>Login</button>
+    <button mat-raised-button [routerLink]="['/Home']"><mat-icon>home</mat-icon>Home</button>
+    <button mat-raised-button [routerLink]="['/About_Us']"><mat-icon>info</mat-icon>About us</button>
+    <button mat-raised-button [routerLink]="['/Data']"><mat-icon>insert_chart</mat-icon>Data</button>
+    <button mat-raised-button [routerLink]="['/Emp']"><mat-icon>list</mat-icon>Employee List</button>
+    <button mat-raised-button [routerLink]="['/Movie']"><mat-icon>movie</mat-icon>Movies</button>
+    <button mat-raised-button [routerLink]="['/forms']"><mat-icon>assignment</mat-icon>Forms</button>
+    <button mat-raised-button [routerLink]="['/materialDemo']"><mat-icon>build</mat-icon>Materials</button>
 
-<router-outlet></router-outlet> -->
+</mat-toolbar>
+<br>
+<router-outlet></router-outlet>
 
 <!-- <app-movie></app-movie> -->
 
@@ -38,4 +50,6 @@
 
 <!-- <app-template-driven17></app-template-driven17> -->
 
-<app-reactive-form-demo></app-reactive-form-demo>
+<!-- <app-reactive-form-demo></app-reactive-form-demo> -->
+
+<!-- <app-material-demo></app-material-demo> -->

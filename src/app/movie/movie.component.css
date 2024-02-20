@@ -16,12 +16,11 @@ tr{
 td{
     width: 200px;
 }
-
-.form1{
+ .form1{
     width: 350px;
     line-height: 30px;
 }
-
+/*
 .div1{
     width: 500px;
     height: 450px;
@@ -38,15 +37,15 @@ td{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -2%);
-}
+} */
 
 #addbutton{
     width: 300px;
     height: 50px;
-    position: relative;
+    /* position: relative; */
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -2%);
+    /* transform: translate(-50%, -2%); */
 }
 
 .buttonFontStyle{
