@@ -40,7 +40,7 @@ export class ReactiveFormDemoComponent implements OnInit {
         }
         console.log(this.form.value)
       }
-
+      
       onReset(){
         this.form.reset();
         this.submitted=false;
