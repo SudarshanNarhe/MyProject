@@ -8,7 +8,6 @@ import { EmpRoutesComponent } from './emp-routes/emp-routes.component';
 import { MovieComponent } from './movie/movie.component';
 import { LoginComponent } from './login/login.component';
 import { ReactiveFormDemoComponent } from './reactive-form-demo/reactive-form-demo.component';
-import path from 'path';
 import { MaterialDemoComponent } from './material-demo/material-demo.component';
 
 
